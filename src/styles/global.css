@@ -1,0 +1,418 @@
+/* =========================================================
+   Cybernaut
+   Global Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Theme
+   ========================================================= */
+
+:root {
+
+    /* Background */
+
+    --bg: #05011d;
+    --surface: #10103d;
+
+    /* Brand */
+
+    --primary:   #1ebcff;
+    --secondary: #8a2cff;
+    --accent:    #ff2ca8;
+
+    /* Text */
+
+    --text: #f0e6e0;
+    --text-muted: #b5b2d5;
+
+    /* Border */
+
+    --border: #2a2470;
+
+    /* Fonts */
+
+    --font-heading: "Orbitron", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-code: "JetBrains Mono", monospace;
+    --font-arcade: "Silkscreen", monospace;
+
+    /* Layout */
+
+    --page-width: 1200px;
+
+    /* Animation */
+
+    --transition: .25s ease;
+}
+
+
+/* =========================================================
+   Reset
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   Base
+   ========================================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: var(--font-body);
+
+    line-height: 1.7;
+
+    min-height: 100vh;
+
+}
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+}
+
+a {
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    transition: var(--transition);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: var(--font-heading);
+
+    margin-bottom: 1rem;
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+p {
+
+    margin-bottom: 1rem;
+
+}
+
+main {
+
+    width: min(calc(100% - 2rem), 70rem);
+
+    margin-inline: 2rem auto;
+
+    padding: 2rem 1rem;
+
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.site-header {
+
+    width: min(calc(100% - 2rem), var(--page-width));
+
+    margin: 2rem auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+/* =========================================================
+   Banner Wrapper
+   ========================================================= */
+
+.banner-wrapper {
+
+    width: 100%;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    max-height: 320px;
+
+}
+
+/* =========================================================
+   Banner
+   ========================================================= */
+
+.banner {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    box-shadow:
+        0 0 20px rgba(2,135,215,.15),
+        0 0 40px rgba(102,9,183,.15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+/* =========================================================
+   Navigation Container
+   ========================================================= */
+
+.navbar {
+
+    width: 100%;
+
+    margin-top: 0.5rem;
+
+    border: 2px solid var(--secondary);
+
+    border-radius: 20px;
+
+    background: rgba(5, 1, 29, 0.92);
+
+    backdrop-filter: blur(8px);
+
+    padding: .75rem 1rem;
+
+    box-shadow:
+        0 0 16px rgba(102,9,183,.25),
+        inset 0 0 10px rgba(2,135,215,.10);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.navbar:hover {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 20px rgba(2,135,215,.25),
+        0 0 40px rgba(102,9,183,.20);
+
+}
+
+/* =========================================================
+   Desktop Navigation
+   ========================================================= */
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    list-style: none;
+
+}
+
+.nav-links li {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.nav-links li:not(:last-child) {
+
+    border-right: 1px solid rgba(255,255,255,.18);
+
+}
+
+.nav-links a {
+
+    display: block;
+
+    padding: .85rem 2rem;
+
+    color: var(--primary);
+
+    font-family: var(--font-heading);
+
+    font-size: .95rem;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+    transition:
+        color .25s ease,
+        text-shadow .25s ease,
+        transform .25s ease;
+
+}
+
+.nav-links a:hover {
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    text-shadow:
+        0 0 2px #ffffff,
+        0 0 6px var(--accent),
+        0 0 12px var(--accent),
+        0 0 24px var(--accent),
+        0 0 48px var(--accent),
+        0 0 72px var(--accent);
+
+}
+
+/* =========================================================
+   Mobile Navigation
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: .5rem;
+    }
+
+    .nav-toggle {
+        display: block;
+        width: 100%;
+        padding: .9rem;
+        background: transparent;
+        border: none;
+        color: var(--primary);
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: .5rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   Layout
+   ========================================================= */
+
+.page {
+    width: min(calc(100% - 2rem), var(--page-width));
+    margin-inline: auto;
+}
+
+.content {
+    max-width: 42rem;
+}
+
+/* =========================================================
+   Card Grid
+   ========================================================= */
+
+   .card-grid {
+    display: grid;
+    gap: 2rem;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.25rem;
+}

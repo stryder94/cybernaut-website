@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import banner from "../images/cybernautDesktopBanner.png";
+
+import Navigation from "./Navigation.astro";
+---
+
+<header class="site-header">
+
+    <div class="banner-wrapper">
+
+        <Image
+            src={banner}
+            alt="Cybernaut"
+            class="banner"
+            loading="eager"
+        />
+
+    </div>
+
+    <Navigation />
+
+</header>

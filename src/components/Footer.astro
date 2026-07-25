@@ -1,0 +1,105 @@
+---
+import Social from "./Social.astro";
+---
+
+<style>
+footer {
+    width: min(calc(100% - 2rem), var(--page-width));
+
+    margin: 5rem auto 3rem;
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-family: var(--font-code);
+    font-size: .75rem;
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+.footer-title,
+.footer-tagline,
+.footer-status,
+.copyright {
+    font-size: inherit;
+}
+
+.footer-title {
+    margin: 0 0 2rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+    color: var(--text);
+}
+
+.footer-tagline {
+    margin: 0 0 3rem;
+    color: var(--text);
+}
+
+.social-links {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.footer-status {
+    margin-bottom: 3rem;
+    letter-spacing: .05em;
+}
+
+.copyright {
+    color: var(--text-muted);
+}
+</style>
+
+<footer>
+
+    <h2 class="footer-title">
+        CYBERNAUT
+    </h2>
+
+    <div class="footer-tagline">
+        Building enterprise infrastructure,<br>
+        homelabs, automation,<br>
+        and creative technology.
+    </div>
+
+    <div class="social-links">
+
+        <div class="social-item">
+            <Social platform="GitHub" username="stryder94" />
+            <span>GitHub</span>
+        </div>
+
+        <div class="social-item">
+            <Social platform="LinkedIn" username="jacob-edens-5322a5181" />
+            <span>LinkedIn</span>
+        </div>
+
+        <div class="social-item">
+            <Social platform="Instagram" username="jacob.t.edens" />
+            <span>Instagram</span>
+        </div>
+
+    </div>
+
+    <div class="footer-status">
+        SYSTEM STATUS: ONLINE
+    </div>
+
+    <div class="copyright">
+        © {new Date().getFullYear()} Jacob Edens
+    </div>
+
+</footer>

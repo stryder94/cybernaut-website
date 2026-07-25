@@ -1,0 +1,54 @@
+---
+const links = [
+    { href: "/", label: "Home" },
+    { href: "/projects/", label: "Projects" },
+    { href: "/articles/", label: "Articles" },
+    { href: "/about/", label: "About" },
+    { href: "/now/", label: "Now" }
+];
+---
+
+<nav class="navbar">
+
+    <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="main-menu"
+    >
+        ☰ Menu
+    </button>
+
+    <ul id="main-menu" class="nav-links">
+
+        {links.map(link => (
+
+            <li>
+                <a href={link.href}>{link.label}</a>
+            </li>
+
+        ))}
+
+    </ul>
+
+</nav>
+
+<script>
+const nav = document.currentScript?.previousElementSibling;
+
+if (nav instanceof HTMLElement) {
+    const button = nav.querySelector(".nav-toggle");
+    const menu = nav.querySelector(".nav-links");
+
+    button?.addEventListener("click", () => {
+        menu?.classList.toggle("open");
+
+        const expanded =
+            button.getAttribute("aria-expanded") === "true";
+
+        button.setAttribute(
+            "aria-expanded",
+            String(!expanded)
+        );
+    });
+}
+</script>

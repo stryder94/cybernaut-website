@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { platform, username } = Astro.props;
+
+const socials = {
+    GitHub: {
+        url: `https://github.com/${username}`,
+        icon: "simple-icons:github",
+    },
+    LinkedIn: {
+        url: `https://linkedin.com/in/${username}`,
+        icon: "simple-icons:linkedin",
+    },
+    Instagram: {
+        url: `https://instagram.com/${username}`,
+        icon: "simple-icons:instagram",
+    },
+};
+
+const social = socials[platform];
+---
+<a
+    href={social.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={platform}
+>
+    <Icon name={social.icon} size={22} />
+</a>

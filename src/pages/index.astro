@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hello World Page</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>This is my first HTML page.</p>
-</body>
-</html>
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const pageTitle = 'Home Page';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+const { post } = Astro.props;
+---
+
+<a class="card" href={`/articles/${post.id}/`}>
+  {post.data.heroImage && (
+    <img src={post.data.heroImage} alt={post.data.title} />
+  )}
+
+  <div class="card-content">
+    <h2>{post.data.title}</h2>
+    <p>{post.data.description}</p>
+
+    <time>
+      {new Date(post.data.pubDate).toLocaleDateString()}
+    </time>
+  </div>
+</a>
