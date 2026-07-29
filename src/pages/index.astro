@@ -1,10 +1,109 @@
 ---
-import '../styles/global.css';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = 'Home Page';
+const pageTitle = "CYBERNAUT";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+
+  <section class="hero">
+
+    <p class="tagline">
+      Building infrastructure.<br />
+      Learning in public.<br />
+      Exploring AI, cloud, and self-hosting.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="/projects" class="button primary">View Projects</a>
+      <a href="/articles" class="button secondary">Read Articles</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About</h2>
+
+    <p>
+      Hi, I'm Jacob, an IT professional passionate about cloud computing,
+      homelabs, networking, Linux, and AI.
+    </p>
+
+    <p>
+      Cybernaut is my digital workshop—a place where I document what I'm
+      learning, build projects, and share the journey as I grow into a cloud
+      and infrastructure engineer.
+    </p>
+  </section>
+
+  <section class="projects">
+    <h2>Featured Projects</h2>
+
+    <div class="card-grid">
+
+      <article class="card">
+        <h3>Cybernaut</h3>
+        <p>The website you're looking at—built with Astro and Markdown.</p>
+      </article>
+
+      <article class="card">
+        <h3>Home Lab</h3>
+        <p>Docker, Linux, networking, reverse proxies, AI, and self-hosting.</p>
+      </article>
+
+      <article class="card">
+        <h3>Azure Journey</h3>
+        <p>Documenting my path through Azure certifications and cloud labs.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="articles">
+    <h2>Latest Articles</h2>
+
+    <ul>
+      <li><a href="/articles">Building My Homelab</a></li>
+      <li><a href="/articles">Learning Docker</a></li>
+      <li><a href="/articles">Beginning Azure Fundamentals</a></li>
+    </ul>
+  </section>
+
+  <section class="focus">
+    <h2>Current Focus</h2>
+
+    <ul>
+      <li>☁️ Azure Fundamentals (AZ-900)</li>
+      <li>💻 Cybernaut v2 Design</li>
+      <li>🐳 Docker & Self-Hosting</li>
+      <li>🤖 AI Infrastructure</li>
+    </ul>
+  </section>
+
+  <section class="stack">
+    <h2>Tech Stack</h2>
+
+    <div class="tech-grid">
+      <span>Linux</span>
+      <span>Docker</span>
+      <span>Azure</span>
+      <span>Git</span>
+      <span>GitHub</span>
+      <span>Astro</span>
+      <span>PowerShell</span>
+      <span>Python</span>
+      <span>Open WebUI</span>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <h2>Philosophy</h2>
+
+    <blockquote>
+      I believe the best way to learn technology is to build with it.
+      Every project on this site started as a question, an experiment,
+      or a problem I wanted to solve.
+    </blockquote>
+  </section>
 
 </BaseLayout>
